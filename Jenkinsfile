@@ -1,5 +1,5 @@
 pipeline {
-    stage any
+    agent any
     parameters{
         choice(name: 'action', choices: ['apply', 'destroy'], description: 'pick the apply or destroy option')
     }
@@ -15,7 +15,7 @@ pipeline {
             }
         }
     }
-    stages{
+    
         stage(" package version"){
             steps{
                 script{
@@ -23,9 +23,9 @@ pipeline {
                     packageversion = packageJson.version
                 }
             }
-        }
+        
     }
-    stages{
+    
         stage("deploy"){
             when{
                 expression{
@@ -39,6 +39,6 @@ pipeline {
             steps{
                 echo " application is deployed"
             }
-        }
+        
     }
 }
