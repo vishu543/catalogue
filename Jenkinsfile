@@ -38,6 +38,21 @@ pipeline {
                 echo " application is deployed"
             }
         
+        }stage("destroy"){
+            when{
+                expression{
+                    params.action = 'destroy'
+                }
+            }
+            input{
+                message "should we continue"
+                ok "please continue"
+            }
+            steps{
+                echo " application is destroyed"
+            }
+        
         }
+
     }
 }
