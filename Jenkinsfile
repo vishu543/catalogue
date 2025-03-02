@@ -31,10 +31,10 @@ pipeline {
                     params.action == 'apply'
                 }
             }
-            #input{
-             #   message "should we continue"
-              #  ok "please continue"
-            #}
+            //input{
+             //   message "should we continue"
+              //  ok "please continue"
+            //}
             steps{
                 echo " application is deployed"
             }
