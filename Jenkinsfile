@@ -14,7 +14,7 @@ pipeline {
                 """
             }
         }
-    }
+    
     
         stage(" package version"){
             steps{
@@ -40,5 +40,6 @@ pipeline {
                 echo " application is deployed"
             }
         
+        }
     }
 }
