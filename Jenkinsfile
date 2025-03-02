@@ -18,7 +18,7 @@ pipeline {
             steps{
                 script{
                     def packageJson = readJSON file: 'package.json'
-                    packageversion = packageJson.version
+                    packageVersion = packageJson.version
                     echo "$packageVersion"
                 }
             }
@@ -39,7 +39,8 @@ pipeline {
                 echo " application is deployed"
             }
         
-        }stage("destroy"){
+        }
+        stage("destroy"){
             when{
                 expression{
                     params.action = 'destroy'
