@@ -9,9 +9,7 @@ pipeline {
     stages{
         stage("Terraform init"){
             steps{
-                sh """
-                    Terraform init
-                """
+                echo " init is implied"
             }
         }
     
